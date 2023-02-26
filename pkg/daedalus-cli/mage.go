@@ -37,12 +37,12 @@ func ProtoGen() error {
 	return cmd.Run()
 }
 
-// // A custom install step if you need your bin someplace other than go/bin
-// func Install() error {
-// 	mg.Deps(Build)
-// 	fmt.Println("Installing...")
-// 	return os.Rename("./orchestrator", "/usr/bin/orchestrator")
-// }
+// A custom install step if you need your bin someplace other than go/bin
+func Install() error {
+	mg.Deps(Build)
+	fmt.Println("Installing...")
+	return os.Rename("./daedalus", "/usr/local/bin/daedalus")
+}
 
 // // Clean up after yourself
 // func Clean() {

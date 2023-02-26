@@ -8,19 +8,19 @@ import (
 
 	"github.com/consensys/gnark/frontend"
 	"github.com/consensys/gnark/frontend/cs/r1cs"
-	"github.com/smsunarto/daedalus/pkg/daedalus-cli/circuits"
+	"github.com/smsunarto/daedalus/pkg/daedalus-cli/common"
 )
 
-const (
-	buildDir = "build"
+var (
+	buildDir string
 )
 
-func CompileCircuit(circuitName string, c circuits.CircuitEntry) error {
+func CompileCircuit(circuitName string, c common.CircuitEntry) error {
 	fmt.Printf("Compiling circuit: %s\n", circuitName)
 
 	cs, err := frontend.Compile(c.Curve.ScalarField(), r1cs.NewBuilder, c.Circuit)
 	if err != nil {
-		panic(err)
+		return err
 	}
 
 	csBuf := new(bytes.Buffer)
@@ -28,12 +28,14 @@ func CompileCircuit(circuitName string, c circuits.CircuitEntry) error {
 		return err
 	}
 
-	filename := fmt.Sprintf("%s.r1cs", circuitName)
-	filepath := fmt.Sprintf("%s/%s", buildDir, filename)
-
-	if err := os.MkdirAll(buildDir, os.ModePerm); err != nil {
+	// Create a r1cs output directory in ./build/r1cs
+	r1csOutputDir := fmt.Sprintf("%s/r1cs", buildDir)
+	if err := os.MkdirAll(r1csOutputDir, os.ModePerm); err != nil {
 		return err
 	}
+
+	// Write the r1cs file in ./build/r1cs/<circuitName>.r1cs
+	filepath := fmt.Sprintf("%s/%s.r1cs", r1csOutputDir, circuitName)
 
 	fo, err := os.Create(filepath)
 	if err != nil {
@@ -52,7 +54,8 @@ func CompileCircuit(circuitName string, c circuits.CircuitEntry) error {
 	return nil
 }
 
-func CompileAllCircuits(circuits map[string]circuits.CircuitEntry) error {
+func CompileAllCircuits(circuits map[string]common.CircuitEntry, bd string) error {
+	buildDir = bd
 	for circuitName, circuit := range circuits {
 		if err := CompileCircuit(circuitName, circuit); err != nil {
 			return err
