@@ -31,6 +31,12 @@ func Build() error {
 	return cmd.Run()
 }
 
+func ProtoGen() error {
+	fmt.Println("Generating protobuf...")
+	cmd := exec.Command("protoc", "--go_out=.", "--go_opt=paths=source_relative", "--go-grpc_out=.", "--go-grpc_opt=paths=source_relative", "proto/prover.proto")
+	return cmd.Run()
+}
+
 // // A custom install step if you need your bin someplace other than go/bin
 // func Install() error {
 // 	mg.Deps(Build)
