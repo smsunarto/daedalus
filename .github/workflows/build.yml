@@ -23,3 +23,21 @@ jobs:
           version: latest
           args: -v build
           workdir: ./pkg/prover
+  build-cli:
+    defaults:
+      run:
+        working-directory: ./pkg/daedalus-cli
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: "1.20"
+      - name: Run Mage
+        uses: magefile/mage-action@v2
+        with:
+          version: latest
+          args: -v build
+          workdir: ./pkg/daedalus-cli
