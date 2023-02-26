@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/smsunarto/daedalus/pkg/prover/proto";
+
+service Prover {
+  rpc GenerateProof (GenerateProofRequest) returns (GenerateProofResponse) {}
+}
+
+message GenerateProofRequest {
+  bytes full_witness = 1;
+  string circuit_name = 2;
+}
+
+message GenerateProofResponse {
+  bytes proof = 1;
+  string err = 2;
+}
