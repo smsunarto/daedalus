@@ -1,6 +1,6 @@
 # Daedalus
 
-![Deedalus Build Badge](https://github.com/smsunarto/daedalus/actions/workflows/build.yml/badge.svg)
+![Daedalus Build Badge](https://github.com/smsunarto/daedalus/actions/workflows/build.yml/badge.svg)
 
 ![Deadalus Cover](/.github/cover.png)
 
