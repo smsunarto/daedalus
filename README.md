@@ -2,9 +2,9 @@
 
 ![Daedalus Build Badge](https://github.com/smsunarto/daedalus/actions/workflows/build.yml/badge.svg)
 
-![Deadalus Cover](/.github/cover.png)
+Deadalus is a modular toolkit for zkSNARKs development and deployment written in Go using Gnark.
 
-Daedalus is a cloud-based ZK proving infrastructure toolkit designed for easy prover deployments and horizontal scalability.
+![Deadalus Cover](/.github/cover.png)
 
 ```
 daedalus
