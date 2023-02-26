@@ -1,6 +1,6 @@
 # Daedalus
 
-![Deadalus cover](https://i.imgur.com/aZPYOTf.png)
+![Deadalus Cover](/.github/cover.png)
 
 Daedalus is a cloud-based ZK proving infrastructure toolkit designed for easy prover deployments and horizontal scalability.
 
