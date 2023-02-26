@@ -1,10 +1,10 @@
-# Daedalus
-
 ![Daedalus Build Badge](https://github.com/smsunarto/daedalus/actions/workflows/build.yml/badge.svg)
 
-Deadalus is a modular toolkit for zkSNARKs development and deployment written in Go using Gnark.
+# Daedalus
 
 ![Deadalus Cover](/.github/cover.png)
+
+Deadalus is a modular toolkit for zkSNARKs development and deployment written in Go using Gnark.
 
 ```
 daedalus
@@ -13,6 +13,21 @@ daedalus
     └── prover         // WIP: Generate proofs and send result to webhook endpoint
 ```
 
-## Getting Started
+## Todo List
 
-WIP
+- [ ] Dockerize + Terraform
+- [ ] Tests
+  - [ ] Daedalus CLI
+  - [ ] Prover
+
+### Daedalus-CLI
+
+- [x] Compile circuits
+- [x] Perform trusted setup
+- [ ] Deploy circuits to a persistence/storage layer
+
+### Prover
+
+- [x] Generate proof
+- [ ] Poll task queue for proving request
+- [ ] Call webhook endpoint supplied by task to submit proof
