@@ -8,7 +8,7 @@ import (
 
 	"github.com/consensys/gnark/frontend"
 	"github.com/consensys/gnark/frontend/cs/r1cs"
-	"github.com/smsunarto/daedalus/pkg/daedalus-cli/common"
+	"github.com/smsunarto/daedalus/pkg/common"
 )
 
 var (

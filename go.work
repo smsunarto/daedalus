@@ -2,6 +2,7 @@ go 1.20
 
 use (
 	./example
+	./pkg/common
 	./pkg/daedalus-cli
 	./pkg/prover
 )

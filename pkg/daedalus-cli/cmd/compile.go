@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"plugin"
 
-	"github.com/smsunarto/daedalus/pkg/daedalus-cli/common"
+	"github.com/smsunarto/daedalus/pkg/common"
 	"github.com/smsunarto/daedalus/pkg/daedalus-cli/internal/zk"
 	"github.com/spf13/cobra"
 )

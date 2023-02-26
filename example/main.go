@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/consensys/gnark/frontend"
-	"github.com/smsunarto/daedalus/pkg/daedalus-cli/common"
+	"github.com/smsunarto/daedalus/pkg/common"
 )
 
 var Circuits map[string]common.CircuitEntry
